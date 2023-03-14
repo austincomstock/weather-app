@@ -35,17 +35,30 @@ app.post("/", function (req, res) {
       const icon = weatherData.weather[0].icon;
       console.log(icon);
       const imageUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-      res.write(
+      // res.write(
+      //   "<h1>The temperature in " +
+      //     name +
+      //     " is " +
+      //     temp +
+      //     " degrees Fahrenheit.</h1>"
+      // );
+      // res.write("<p>The weather is currently " + weatherDescription + "</p>");
+      // res.write("<img src=" + imageUrl + ">");
+
+      // res.send();
+      res.send(
         "<h1>The temperature in " +
           name +
           " is " +
           temp +
-          " degrees Fahrenheit.</h1>"
+          " degrees Fahrenheit.</h1>" +
+          "<p>The weather is currently " +
+          weatherDescription +
+          "</p>" +
+          "<img src=" +
+          imageUrl +
+          ">"
       );
-      res.write("<p>The weather is currently " + weatherDescription + "</p>");
-      res.write("<img src=" + imageUrl + ">");
-
-      res.send();
     });
   });
 });
